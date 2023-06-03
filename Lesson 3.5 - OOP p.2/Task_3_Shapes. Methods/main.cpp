@@ -5,14 +5,6 @@
 class Figure
 {
 public:
-	int get_a() { return a; }
-	int get_b() { return b; }
-	int get_c() { return c; }
-	int get_d() { return d; }
-	int get_A() { return A; }
-	int get_B() { return B; }
-	int get_C() { return C; }
-	int get_D() { return D; }
 	int get_sides_count() { return sides_count; }
 	std::string get_name() { return name; }
 
@@ -32,14 +24,6 @@ public:
 	}
 
 protected:
-	int a = 0;
-	int b = 0;
-	int c = 0;
-	int d = 0;
-	int A = 0;
-	int B = 0;
-	int C = 0;
-	int D = 0;
 	int sides_count = 0;
 	std::string name = "Фигура";
 	std::string correct;
@@ -74,15 +58,29 @@ public:
 		std::cout << "Стороны: " << "a=" << get_a() << " b=" << get_b() << " c=" << get_c() << std::endl;
 		std::cout << "Углы: " << "A=" << get_A() << " B=" << get_B() << " C=" << get_C() << std::endl;
 	}
+
+	int get_a() { return a; }
+	int get_b() { return b; }
+	int get_c() { return c; }
+	int get_A() { return A; }
+	int get_B() { return B; }
+	int get_C() { return C; }
+
+protected:
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int A = 0;
+	int B = 0;
+	int C = 0;
 };
 
 class RightTriangle : public Triangle
 {
 public:
-	RightTriangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, C)
+	RightTriangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, 90)
 	{
 		name = "Прямоугольный треугольник";
-		C = 90;
 		check();
 	}
 
@@ -97,11 +95,9 @@ public:
 class IsoscelesTriangle : public Triangle
 {
 public:
-	IsoscelesTriangle(int a, int b, int A, int B) : Triangle(a, b, c, A, B, C)
+	IsoscelesTriangle(int a, int b, int A, int B) : Triangle(a, b, a, A, B, A)
 	{
 		name = "Равнобедренный треугольник";
-		c = a;
-		C = A;
 		check();
 	}
 
@@ -116,11 +112,9 @@ public:
 class EquilateralTriangle : public Triangle
 {
 public:
-	EquilateralTriangle(int a) : Triangle(a, b, c, A, B, C)
+	EquilateralTriangle(int a) : Triangle(a, a, a, 60, 60, 60)
 	{
 		name = "Равносторонний треугольник";
-		b = c = a;
-		A = B = C = 60;
 		check();
 	}
 
@@ -154,7 +148,7 @@ public:
 	{
 		Figure::print_info();
 		std::cout << "Стороны: " << "a=" << get_a() << " b=" << get_b() << " c=" << get_c() << " d=" << get_d() << std::endl;
-		std::cout << "Углы: " << "A=" << get_A() << " B=" << get_B() << " C=" << get_C() << " D=" << get_D() << std::endl << std::endl;
+		std::cout << "Углы: " << "A=" << get_A() << " B=" << get_B() << " C=" << get_C() << " D=" << get_D() << std::endl;
 	}
 
 	bool check() override
@@ -163,17 +157,32 @@ public:
 			return true;
 		else return false;
 	}
+
+	int get_a() { return a; }
+	int get_b() { return b; }
+	int get_c() { return c; }
+	int get_d() { return d; }
+	int get_A() { return A; }
+	int get_B() { return B; }
+	int get_C() { return C; }
+	int get_D() { return D; }
+
+protected:
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int A = 0;
+	int B = 0;
+	int C = 0;
+	int D = 0;
 };
 
 class Parallelogram : public Quadrangle
 {
 public:
-	Parallelogram(int a, int b, int A, int B) : Quadrangle(a, b, c, d, A, B, C, D)
+	Parallelogram(int a, int b, int A, int B) : Quadrangle(a, b, a, b, A, B, A, B)
 	{
-		c = a;
-		d = b;
-		C = A;
-		D = B;
 		name = "Параллелограмм";
 		check();
 	}
@@ -189,9 +198,8 @@ public:
 class Rectang : public Parallelogram
 {
 public:
-	Rectang(int a, int b) : Parallelogram(a, b, A, B)
+	Rectang(int a, int b) : Parallelogram(a, b, 90, 90)
 	{
-		A = B = C = D = 90;
 		name = "Прямоугольник";
 		check();
 	}
@@ -207,10 +215,8 @@ public:
 class Square : public Parallelogram
 {
 public:
-	Square(int a) : Parallelogram(a, b, A, B)
+	Square(int a) : Parallelogram(a, a, 90, 90)
 	{
-		A = B = C = D = 90;
-		b = c = d = a;
 		name = "Квадрат";
 		check();
 	}
@@ -226,9 +232,8 @@ public:
 class Rombus : public Parallelogram
 {
 public:
-	Rombus(int a, int A, int B) : Parallelogram(a, b, A, B)
+	Rombus(int a, int A, int B) : Parallelogram(a, a, A, B)
 	{
-		b = d = a;
 		name = "Ромб";
 		check();
 	}
@@ -253,7 +258,7 @@ int main()
 	RightTriangle right_triangle1(40, 50, 60, 70, 80);
 	RightTriangle right_triangle2(40, 50, 30, 60, 30);
 	IsoscelesTriangle isosceles_triangle(70, 80, 30, 120);
-	EquilateralTriangle equilateral_triangle(60);
+	EquilateralTriangle equilateral_triangle(50);
 	Quadrangle quadrangle(1, 2, 3, 4, 60, 60, 120, 120);
 	Parallelogram parallelogram(99, 98, 56, 42);
 	Rectang rectangle(2, 4);

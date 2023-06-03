@@ -6,26 +6,9 @@ class Figure
 {
 public:
 	virtual void print(){}
-
-	int get_a() { return a; }
-	int get_b() { return b; }
-	int get_c() { return c; }
-	int get_d() { return d; }
-	int get_A() { return A; }
-	int get_B() { return B; }
-	int get_C() { return C; }
-	int get_D() { return D; }
 	std::string get_name() { return name; }
 
 protected:
-	int a = 0;
-	int b = 0;
-	int c = 0;
-	int d = 0;
-	int A = 0;
-	int B = 0;
-	int C = 0;
-	int D = 0;
 	std::string name = "Фигура";
 };
 
@@ -48,37 +31,46 @@ public:
 		std::cout << "Стороны: " << "a=" << get_a() << " b=" << get_b() << " c=" << get_c() << std::endl;
 		std::cout << "Углы: " << "A=" << get_A() << " B=" << get_B() << " C=" << get_C() << std::endl << std::endl;
 	}
+	int get_a() { return a; }
+	int get_b() { return b; }
+	int get_c() { return c; }
+	int get_A() { return A; }
+	int get_B() { return B; }
+	int get_C() { return C; }
+
+protected:
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int A = 0;
+	int B = 0;
+	int C = 0;
 };
 
 class RightTriangle : public Triangle
 {
 public:
-	RightTriangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, C)
+	RightTriangle(int a, int b, int c, int A, int B) : Triangle(a, b, c, A, B, 90)
 	{
 		name = "Прямоугольный треугольник";
-		C = 90;
 	}
 };
 
 class IsoscelesTriangle : public Triangle
 {
 public:
-	IsoscelesTriangle(int a, int b, int A, int B) : Triangle(a, b, c, A, B, C)
+	IsoscelesTriangle(int a, int b, int A, int B) : Triangle(a, b, a, A, B, A)
 	{
 		name = "Равнобедренный треугольник";
-		c = a;
-		C = A;
 	}
 };
 
 class EquilateralTriangle : public Triangle
 {
 public:
-	EquilateralTriangle(int a) : Triangle(a, b, c, A, B, C)
+	EquilateralTriangle(int a) : Triangle(a, a, a, A, A, A)
 	{
 		name = "Равносторонний треугольник";
-		b = c = a;
-		A = B = C = 60;
 	}
 };
 
@@ -103,17 +95,32 @@ public:
 		std::cout << "Стороны: " << "a=" << get_a() << " b=" << get_b() << " c=" << get_c() << " d=" << get_d() << std::endl;
 		std::cout << "Углы: " << "A=" << get_A() << " B=" << get_B() << " C=" << get_C() << " D=" << get_D() << std::endl << std::endl;
 	}
+
+	int get_a() { return a; }
+	int get_b() { return b; }
+	int get_c() { return c; }
+	int get_d() { return d; }
+	int get_A() { return A; }
+	int get_B() { return B; }
+	int get_C() { return C; }
+	int get_D() { return D; }
+
+protected:
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	int d = 0;
+	int A = 0;
+	int B = 0;
+	int C = 0;
+	int D = 0;
 };
 
 class Parallelogram : public Quadrangle
 {
 public:
-	Parallelogram(int a, int b, int A, int B) : Quadrangle(a, b, c, d, A, B, C, D)
+	Parallelogram(int a, int b, int A, int B) : Quadrangle(a, b, a, b, A, B, A, B)
 	{
-		c = a;
-		d = b;
-		C = A;
-		D = B;
 		name = "Параллелограмм";
 	}
 };
@@ -121,9 +128,8 @@ public:
 class Rectang : public Parallelogram
 {
 public:
-	Rectang(int a, int b) : Parallelogram(a, b, A, B)
+	Rectang(int a, int b) : Parallelogram(a, b, 90, 90)
 	{
-		A = B = C = D = 90;
 		name = "Прямоугольник";
 	}
 };
@@ -131,10 +137,8 @@ public:
 class Square : public Parallelogram
 {
 public:
-	Square(int a) : Parallelogram(a, b, A, B)
+	Square(int a) : Parallelogram(a, a, 90, 90)
 	{
-		A = B = C = D = 90;
-		b = c = d = a;
 		name = "Квадрат";
 	}
 };
@@ -142,9 +146,8 @@ public:
 class Rombus : public Parallelogram
 {
 public:
-	Rombus(int a, int A, int B) : Parallelogram(a, b, A, B)
+	Rombus(int a, int A, int B) : Parallelogram(a, a, A, B)
 	{
-		b = d = a;
 		name = "Ромб";
 	}
 };

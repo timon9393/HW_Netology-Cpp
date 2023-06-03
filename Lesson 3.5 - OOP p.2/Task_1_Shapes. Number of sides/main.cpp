@@ -24,9 +24,9 @@ protected:
 class Triangle : public Figure
 {
 public:
-	Triangle(int a)
+	Triangle()
 	{
-		sides_count = a;
+		sides_count = 3;
 		name = "Треугольник";
 	}
 };
@@ -34,7 +34,7 @@ public:
 class Quadrangle : public Figure
 {
 public:
-	Quadrangle(int a)
+	Quadrangle()
 	{
 		name = "Четырёхугольник";
 		sides_count = 4;
@@ -53,10 +53,10 @@ int main()
 	Figure figure;
 	std::cout << figure.get_name() << ": " << figure.get_sides_count() << std::endl;
 
-	Triangle triangle(3);
+	Triangle triangle;
 	std::cout << triangle.get_name() << ": " << triangle.get_sides_count() << std::endl;
 
-	Quadrangle quadrangle(4);
+	Quadrangle quadrangle;
 	std::cout << quadrangle.get_name() << ": " << quadrangle.get_sides_count() << std::endl;
 
 
