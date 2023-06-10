@@ -5,6 +5,7 @@
 IsoscelesTriangle::IsoscelesTriangle(int a, int b, int A, int B) : Triangle(a, b, a, A, B, A)
 {
 	name = "Равнобедренный треугольник";
+	check();
 }
 
 bool IsoscelesTriangle::check()
@@ -16,8 +17,5 @@ bool IsoscelesTriangle::check()
 	else if (A != C) {
 		throw MyException("угол \"А\" не равен углу \"С\"");
 		return false;
-	}
-	else if (!Triangle::check())
-		return false;
-	else return true;
+	}else return true;
 }

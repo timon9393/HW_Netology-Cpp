@@ -5,6 +5,7 @@
 Rombus::Rombus(int a, int A, int B) : Parallelogram(a, a, A, B)
 {
 	name = "Ромб";
+	check();
 }
 
 bool Rombus::check()
@@ -16,8 +17,5 @@ bool Rombus::check()
 	else if (A != C || B != D) {
 		throw MyException("углы \"А\", \"C\" и \"B\", \"D\" попарно не равны!");
 		return false;
-	}
-	else if (!Quadrangle::check())
-		return false;
-	else return true;
+	}else return true;
 }

@@ -5,6 +5,7 @@
 Square::Square(int a) : Parallelogram(a, a, 90, 90)
 {
 	name = " вадрат";
+	check();
 }
 
 bool Square::check()
@@ -16,8 +17,5 @@ bool Square::check()
 	else if (A != B || B != C || C != D || A != 90) {
 		throw MyException("не все углы равны 90");
 		return false;
-	}
-	else if (!Quadrangle::check())
-		return false;
-	else return true;
+	}else return true;
 }

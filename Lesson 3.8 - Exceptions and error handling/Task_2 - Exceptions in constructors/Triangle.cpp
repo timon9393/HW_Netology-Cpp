@@ -11,18 +11,11 @@ Triangle::Triangle(int a, int b, int c, int A, int B, int C) {
 	this->C = C;
 	name = "Треугольник";
 	sides_count = 3;
+	check();
 }
 void Triangle::print()
 {
-	try
-	{
-		check();
-		std::cout << name << " (Стороны: " << a << ", " << b << ", " << c << "; Углы: " << A << ", " << B << ", " << C << ") создан" << std::endl << std::endl;
-	}
-	catch (const MyException& ex)
-	{
-		std::cout << "Ошибка создания фигуры. Причина: " << ex.what() << std::endl << std::endl;
-	}
+	std::cout << name << " (Стороны: " << a << ", " << b << ", " << c << "; Углы: " << A << ", " << B << ", " << C << ") создан" << std::endl << std::endl;
 }
 
 bool Triangle::check()

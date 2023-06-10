@@ -5,6 +5,7 @@
 Rectang::Rectang(int a, int b) : Parallelogram(a, b, 90, 90)
 {
 	name = "Прямоугольник";
+	check();
 }
 
 bool Rectang::check()
@@ -16,8 +17,5 @@ bool Rectang::check()
 	else if (!(A == B && B == C && C == D && D == 90)) {
 		throw MyException("все углы не равны 90 градусов");
 		return false;
-	}
-	else if (!Quadrangle::check())
-		return false;
-	else return true;
+	}else return true;
 }

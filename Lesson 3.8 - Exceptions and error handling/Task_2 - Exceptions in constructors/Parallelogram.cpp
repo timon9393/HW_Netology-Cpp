@@ -5,6 +5,7 @@
 Parallelogram::Parallelogram(int a, int b, int A, int B) : Quadrangle(a, b, a, b, A, B, A, B)
 {
 	name = "Параллелограмм";
+	check();
 }
 bool Parallelogram::check()
 {
@@ -15,8 +16,5 @@ bool Parallelogram::check()
 	else if (A != C || B != D) {
 		throw MyException("углы \"А\", \"C\" и \"B\", \"D\" попарно не равны!");
 		return false;
-	}
-	else if (!Quadrangle::check())
-		return false;
-	else return true;
+	}else return true;
 }

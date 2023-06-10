@@ -14,6 +14,7 @@ Quadrangle::Quadrangle(int a, int b, int c, int d, int A, int B, int C, int D)
 	this->D = D;
 	sides_count = 4;
 	name = "Четырёхугольник";
+	check();
 }
 
 bool Quadrangle::check()
@@ -31,13 +32,5 @@ bool Quadrangle::check()
 
 void Quadrangle::print()
 {
-	try
-	{
-		check();
-		std::cout << name << " (Стороны: " << a << ", " << b << ", " << c << ", " << d << "; Углы: " << A << ", " << B << ", " << C << ", " << D << ") создан" << std::endl << std::endl;
-	}
-	catch (const MyException& ex)
-	{
-		std::cout << "Ошибка создания фигуры. Причина: " << ex.what() << std::endl << std::endl;
-	}
+	std::cout << name << " (Стороны: " << a << ", " << b << ", " << c << ", " << d << "; Углы: " << A << ", " << B << ", " << C << ", " << D << ") создан" << std::endl << std::endl;
 }
