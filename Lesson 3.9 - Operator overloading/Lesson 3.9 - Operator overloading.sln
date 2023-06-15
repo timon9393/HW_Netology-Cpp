@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task_1 - comparison in fractions", "Task_1 - comparison in fractions\Task_1 - comparison in fractions.vcxproj", "{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Task_2 - other operations with fractions", "Task_2 - other operations with fractions\Task_2 - other operations with fractions.vcxproj", "{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Debug|x64.ActiveCfg = Debug|x64
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Debug|x64.Build.0 = Debug|x64
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Debug|x86.ActiveCfg = Debug|Win32
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Debug|x86.Build.0 = Debug|Win32
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Release|x64.ActiveCfg = Release|x64
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Release|x64.Build.0 = Release|x64
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Release|x86.ActiveCfg = Release|Win32
+		{E9761DB5-B638-47C1-BEE8-8A93B17E8F54}.Release|x86.Build.0 = Release|Win32
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Debug|x64.ActiveCfg = Debug|x64
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Debug|x64.Build.0 = Debug|x64
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Debug|x86.ActiveCfg = Debug|Win32
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Debug|x86.Build.0 = Debug|Win32
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Release|x64.ActiveCfg = Release|x64
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Release|x64.Build.0 = Release|x64
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Release|x86.ActiveCfg = Release|Win32
+		{C0C3FB54-BBB1-4A8C-8331-72B9C7C3192B}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {44415881-3D45-4265-AFC2-994C9EDC63F2}
+	EndGlobalSection
+EndGlobal
