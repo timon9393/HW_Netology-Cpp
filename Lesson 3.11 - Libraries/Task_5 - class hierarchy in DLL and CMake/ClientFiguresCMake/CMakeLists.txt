@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(Task5)
+include_directories(CMakeFigureDLL)
+add_executable(FiguresExe main.cpp)
+add_subdirectory(CMakeFigureDLL)
+target_link_libraries(FiguresExe CMakeFigureDLL)

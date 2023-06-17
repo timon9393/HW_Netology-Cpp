@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(CMakeFigureDLL)
+set(SOURCE_DLL EquilateralTriangle.cpp EquilateralTriangle.h Figure.cpp Figure.h IsoscelesTriangle.cpp IsoscelesTriangle.h Parallelogram.cpp Parallelogram.h print_info.cpp print_info.h Quadrangle.cpp Quadrangle.h Rectang.cpp Rectang.h RightTriangle.cpp RightTriangle.h Rombus.cpp Rombus.h Square.cpp Square.h Triangle.cpp Triangle.h)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(CMakeFigureDLL SHARED ${SOURCE_DLL})
