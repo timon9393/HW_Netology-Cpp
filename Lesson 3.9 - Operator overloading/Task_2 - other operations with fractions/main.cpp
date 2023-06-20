@@ -1,8 +1,6 @@
 #include <iostream>
 #include <Windows.h>
 
-#define OUTPUT simp_frac(n_numerator, n_denominator); \
-return Fraction(n_numerator, n_denominator);
 
 bool Check_zero(int& target)
 {
@@ -37,13 +35,15 @@ public:
 		{
 			int n_numerator = numerator_ + right.numerator_;
 			int n_denominator = denominator_;
-			OUTPUT
+			simp_frac(n_numerator, n_denominator);
+			return Fraction(n_numerator, n_denominator);
 		}
 		else
 		{
 			int n_denominator = denominator_ * right.denominator_;
 			int n_numerator = (numerator_ * right.denominator_) + (right.numerator_ * denominator_);
-			OUTPUT
+			simp_frac(n_numerator, n_denominator);
+			return Fraction(n_numerator, n_denominator);
 		}		
 	}
 
@@ -53,13 +53,15 @@ public:
 		{
 			int n_numerator = numerator_ - right.numerator_;
 			int n_denominator = denominator_;
-			OUTPUT
+			simp_frac(n_numerator, n_denominator);
+			return Fraction(n_numerator, n_denominator);
 		}
 		else
 		{
 			int n_denominator = denominator_ * right.denominator_;
 			int n_numerator = (numerator_ * right.denominator_) - (right.numerator_ * denominator_);
-			OUTPUT
+			simp_frac(n_numerator, n_denominator);
+			return Fraction(n_numerator, n_denominator);
 		}
 	}
 
@@ -67,14 +69,16 @@ public:
 	{		
 		int n_numerator = numerator_ * right.numerator_;
 		int n_denominator = denominator_ * right.denominator_;
-		OUTPUT
+		simp_frac(n_numerator, n_denominator);
+		return Fraction(n_numerator, n_denominator);
 	}
 
 	Fraction operator/(const Fraction& right)
 	{
 		int n_numerator = numerator_ * right.denominator_;
 		int n_denominator = denominator_ * right.numerator_;
-		OUTPUT
+		simp_frac(n_numerator, n_denominator);
+		return Fraction(n_numerator, n_denominator);
 	}
 
 	Fraction operator-()
@@ -89,7 +93,7 @@ public:
 		return *this;
 	}
 
-	Fraction& operator++(int)
+	Fraction operator++(int)
 	{
 		Fraction temp(*this);
 		this->numerator_ += denominator_;
@@ -97,7 +101,7 @@ public:
 		return temp;
 	}
 
-	Fraction operator--()
+	Fraction& operator--()
 	{
 		this->numerator_ -= denominator_;
 		this->denominator_ = denominator_;

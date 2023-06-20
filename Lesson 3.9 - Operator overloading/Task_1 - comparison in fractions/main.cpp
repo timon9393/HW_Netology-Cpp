@@ -14,7 +14,12 @@ public:
 		denominator_ = denominator;
 	}
 
-	auto operator<=>(const Fraction&) const = default;
+	bool operator==(Fraction right) { return ((static_cast<double>(numerator_) / static_cast<double>(denominator_)) == (static_cast<double>(right.numerator_) / static_cast<double>(right.denominator_))); }
+	bool operator!=(Fraction right) { return !(*this == right); }
+	bool operator<(Fraction right) { return ((static_cast<double>(numerator_) / static_cast<double>(denominator_)) < (static_cast<double>(right.numerator_)) / (static_cast<double>(right.denominator_))); }
+	bool operator>(Fraction right) { return right < *this; }
+	bool operator<=(Fraction right) { return !(*this > right); }
+	bool operator>=(Fraction right) { return !(*this < right); }
 };
 
 int main()
