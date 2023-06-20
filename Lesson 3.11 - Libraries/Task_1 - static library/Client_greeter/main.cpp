@@ -11,4 +11,6 @@ int main()
 	std::cout << "¬ведите им€: ";
 	std::cin >> name;
 	std::cout << hello.greet(name) << std::endl;
+
+	system("pause");
 }

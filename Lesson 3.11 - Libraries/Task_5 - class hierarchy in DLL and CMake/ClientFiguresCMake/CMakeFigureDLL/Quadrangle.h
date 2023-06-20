@@ -1,14 +1,9 @@
 #pragma once
 #include "Figure.h"
-#ifndef CMAKEFIGUREDLL_EXPORTS
-#define FIGURELIBRARY_API __declspec(dllexport)
-#else
-#define FIGURELIBRARY_API __declspec(dllimport)
-#endif // !FIGUREDLL_EXPORTS
 
 namespace Figures
 {
-	class FIGURELIBRARY_API Quadrangle : public Figure
+	class Quadrangle : public Figure
 	{
 	public:
 		Quadrangle(int a, int b, int c, int d, int A, int B, int C, int D);
