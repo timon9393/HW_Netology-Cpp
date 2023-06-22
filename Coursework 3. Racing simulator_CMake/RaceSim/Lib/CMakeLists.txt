@@ -1,0 +1,5 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(LibDll)
+set(SOURCE_DLL Exception.cpp Exception.h Race.cpp Race.h racing.cpp racing.h sort.cpp sort.h Vehicle.cpp Vehicle.h)
+set(CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS ON)
+add_library(LibDll SHARED ${SOURCE_DLL})

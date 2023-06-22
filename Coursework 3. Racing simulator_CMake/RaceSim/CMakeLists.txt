@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 3.22.0)
+project(RaceSim)
+include_directories(Lib)
+add_executable(Race_Simulator main.cpp)
+add_subdirectory(Lib)
+target_link_libraries(Race_Simulator LibDll)
